@@ -1,0 +1,69 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <ui:include src="navigationBar.xhtml" />
+        <style>
+
+
+            .ui-datatable table {
+                border-collapse: collapse;
+                table-layout: fixed;
+                width: 50%;
+            }         
+            .ui-widget {
+                font-family: Lucida Grande,Lucida Sans,Arial,sans-serif;
+                font-size: 1.1em;
+            }
+        </style>           
+
+        <h:form id="formTable">
+            <p:dataTable id="table" var="document" value="#{rechercheController.docfound}" emptyMessage="l'élément que vous recherchez n'est pas disponnible" selection="#{controller.doc}"  rowKey="#{document.idDocument}"    >
+                <p:ajax  event="rowSelect"  update="formTable" />
+
+                <p:column headerText="Titre">
+                    <h:outputText value="#{document.titre}" />
+                </p:column>
+                <p:column style="width:32px;text-align: center">
+                    <p:commandButton update="formTable,table,:docDetail" oncomplete="PF('carDialog').show()" icon="ui-icon-search" title="View" >
+                        <f:setPropertyActionListener value="#{document}" target="#{rechercheController.docSeleted}" />
+                    </p:commandButton>
+                </p:column>
+
+            </p:dataTable>
+        </h:form>
+
+
+        <p:dialog header="Infos sur le Document" widgetVar="carDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+            <p:outputPanel id="docDetail" style="text-align:center;">
+
+
+                <p:panelGrid  columns="2" rendered="#{not empty rechercheController.docSeleted}" columnClasses="label,value">
+                    <f:facet name="header">
+                        <p:graphicImage url="resources/img/document-#{rechercheController.docSeleted.idDocument}.jpg" alt="#{document.titre}"/> 
+                    </f:facet>
+
+                    <h:outputText value="Id:" />
+                    <h:outputText value="#{rechercheController.docSeleted.idDocument}" />
+                    <h:outputText value="Editeur:" />
+                    <h:outputText value="#{rechercheController.docSeleted.idEditeur.nom}" />
+                    <h:outputText value="Année:" />
+                    <h:outputText value="#{rechercheController.docSeleted.annee}" />
+                    <p:commandButton value="Lire" />
+                    <p:commandButton value="Réserver"/>
+
+                </p:panelGrid>
+            </p:outputPanel>
+        </p:dialog>
+
+
+    </h:body>
+</html>
+

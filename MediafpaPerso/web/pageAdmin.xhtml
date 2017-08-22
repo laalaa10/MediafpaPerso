@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <h:head>
+        <f:facet name="first">
+            <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+            <title>Administrateur</title>
+        </f:facet>
+    </h:head>
+    <h:body>
+
+        
+      <ui:include src="/navigationBar.xhtml" />
+
+        <div id="titreSelect" style="text-align: center; color: #d19405;"><h2>Mediatheque Administrateur</h2>
+        </div>
+
+        <style>
+            body{
+              /*  background-color: #FEEEBD;*/
+            }
+            .ui-datatable table {
+                border-collapse: collapse;
+                table-layout: fixed;
+               /* width: 800px;*/
+             /*   font-size: 14px;*/
+            }
+            #panel{
+                /* width: 59.2%;*/
+                text-align: center;
+            }
+                .ui-button {
+                    cursor: pointer;
+                    display: ruby;
+                    margin-right: 0.1em;
+                    overflow: visible;
+                    padding: 0;
+                    position: relative;
+                    text-align: center;
+                    text-decoration: none; 
+                    font-size: 13px;
+               }
+               .ui-selectonemenu label.ui-selectonemenu-label {
+                  cursor: pointer;
+                  font-size: 14px;
+               }
+               
+.ui-panel .ui-panel-content {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    padding: 0.5em 1em;
+    font-size: 14px;
+}
+.ui-spinner {
+    display: block;
+    overflow: visible;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    vertical-align: middle;
+}
+
+            </style>
+            
+
+<p:growl id="growl" showDetail="true" life="2000" />
+
+            <h:form id="monForm">
+                <div id="listeBout">
+                    <p:selectOneMenu id="selectOneMenuCategories" value="#{controler.selectedCategorie}" style="width:210px;margin:0px;" converter="#{converterCategorie}" >
+                        <f:selectItem itemLabel="-- Choisissez une Categorie--" itemValue="#{null}" noSelectionOption="true" />
+                        <f:selectItems itemLabel="#{categorie.intitule}" var="categorie" value="#{controlerCategorie.renvoyerListeCategories()}" />
+                    </p:selectOneMenu>
+                    <p:commandButton value="Voir les Documents" id="ajax" update=":panel, monForm, :formTable" actionListener="#{controler.selectCategorie()}"/>
+                </div>
+            </h:form>
+
+            <p:panel id="panel">
+                <h3>Liste des documents </h3>
+            </p:panel>
+
+            <div>
+                <h:form id="formTable">
+                    <p:growl id="msgs" showDetail="true"/>
+                    
+                    <p:dataTable id="table" var="document" value="#{controller.document}" emptyMessage="Cette Catégorie n'a plus d'articles en stock" selection="#{controller.doc}" rowKey="#{document.idDocument}" editable="true"  >
+                        <p:ajax  event="rowSelect"  update=":formTable" />
+
+                            <p:column headerText="Categorie">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{document.idCategorieDocument.nom}" /></f:facet>
+               <f:facet name="input"><p:inputText id="modelInput" value="#{document.idCategorieDocument.nom}" style="width:100%"/></f:facet>
+           </p:cellEditor>
+                                
+                            </p:column>
+
+                            <p:column headerText="Titre">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{document.titre}" /></f:facet>
+               <f:facet name="input"><p:inputText value="#{document.titre}" style="width:100%" label="Year"/></f:facet>
+           </p:cellEditor>
+                                
+                            </p:column>
+
+                            <p:column headerText="Annee">
+            <p:cellEditor>
+                <f:facet name="output"><h:outputText value="#{document.annee}" /></f:facet>
+               <f:facet name="input">
+                   <h:selectOneMenu value="#{document.annee}" style="width:100%">
+                       <f:selectItems value="#{dtEditView.brands}" var="man" itemLabel="#{man}" itemValue="#{man}" />
+                   </h:selectOneMenu>
+               </f:facet>
+           </p:cellEditor>
+                                
+                            </p:column>
+
+                            <p:column headerText="Descriptif">
+           <p:cellEditor>
+               <f:facet name="output"><h:outputText value="#{document.description}" /></f:facet>
+               <f:facet name="input">
+                   <h:selectOneMenu value="#{car.color}" style="width:100%">
+                       <f:selectItems value="#{dtEditView.colors}" var="color" itemLabel="#{color}" itemValue="#{color}" />
+                   </h:selectOneMenu>
+               </f:facet>
+           </p:cellEditor>
+                            </p:column>
+                        
+                            <p:column headerText="Nombre d'Exemplaires">
+                                <p:spinner value="1" size="3"  style="width:100%" />
+                            </p:column>
+
+       <p:column style="width:32px">
+           <p:rowEditor />
+       </p:column>
+                        </p:dataTable>
+                    <br/>
+                            <f:facet name="footer">
+                                <p:commandButton process="table" update=":panel, :monForm,:formTable" icon="ui-icon-search" value="Voir les articles sélectionnés" oncomplete="PF('ArticleSelectionné').show()" />
+                            </f:facet>
+                        <p:dialog header="Articles Selectionnés" widgetVar="ArticleSelectionné" modal="true" showEffect="fade" hideEffect="fade" resizable="false" width="200">
+                            <p:outputPanel id="detailsMultiArt" style="text-align:center;">
+                                <ui:repeat value="#{controller.doc}" var="document">
+                                    <h:outputText value="#{controller.doc.idDocument} - #{controller.doc.idCategorieDocument.nom}" style="display:block"/>
+                                </ui:repeat>
+                            </p:outputPanel>
+                        </p:dialog>
+                       <h4> <p:commandButton value="Ajouter un document" update=":panel, :monForm, :formTable"  action="/faces/detailProduit"/>
+                        <p:commandButton value="Enregistrer" update=":panel, :monForm, :formTable" process="table" actionListener="#{controler.selectedArticles()}"/>
+                        <p:commandButton value="Quitter" action="index.xhtml" /></h4>
+                    </h:form>
+                </div>
+
+            </h:body>
+
+        </html>

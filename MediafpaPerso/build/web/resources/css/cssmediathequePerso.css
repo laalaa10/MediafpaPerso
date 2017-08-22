@@ -1,0 +1,35 @@
+
+/* GENERAL */
+body{
+  /*  background-color: #fff;*/
+}
+
+#divConnect{
+    float: left;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 0 5px 30px;
+    position: relative;
+    vertical-align: top;
+    width: 210px;
+    z-index: 2;
+}
+#divCarou{
+    float: left;
+    font-size: 0.9em;
+    margin: 0;
+    padding: 0 5px 30px;
+    position: relative;
+    vertical-align: top;
+    width: 210px;
+    z-index: 2;
+}
+
+#divSuggest{
+    float: left;
+    height: auto;
+    padding: 10px;
+    width: 550px;
+    z-index: 3;
+    font-size: 14px;
+}

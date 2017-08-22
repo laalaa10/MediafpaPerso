@@ -1,0 +1,104 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui">
+
+    <f:view contentType="text/html">
+        <h:head>
+            <f:facet name="first">
+                <meta content='text/html; charset=UTF-8' http-equiv="Content-Type"/>
+                <title>Page formulaire</title>
+            </f:facet>
+        </h:head>
+
+        <h:body>
+                   <ui:include src="navigationBar.xhtml" />
+            <style>
+                body{
+               text-align: left;
+                   /* background-color: #FEEEBD;*/
+                   font-size: 12px;
+                }
+
+
+                #saisi{
+                    text-align: left;
+                }
+                #tableForm{
+
+                }
+                
+element.style {
+    font-size: 2px;
+    text-align: left;
+    
+}
+                
+                
+            </style>
+            <h:form id="formulaireInscription">
+                <div id="saisi"><h3>Veuillez Saisir les informations</h3></div>
+
+    <p:growl id="growl" life="2000" />
+    <table  id="tableForm" align="left" style=" text-align: left; font-size: 12px;">
+        
+        <tr>
+        <td><h4><p:outputLabel  value="Nom : "/></h4></td>
+        <td><p:inputText value ="#{controllerUser.nom}"/></td>       
+        </tr> 
+        
+        <tr>
+            <td> <h4><p:outputLabel value="Prenom : " /></h4></td>
+            <td><p:inputText value ="#{controllerUser.prenom}"/></td>       
+        </tr> 
+               
+        <tr>
+            <td><h4><p:outputLabel value="Téléphone : "/></h4>  </td>
+            <td><p:inputText value ="#{controllerUser.telephone}"/></td>
+        </tr> 
+        <tr>
+            <td><h4><p:outputLabel value="Date de Naissance : "/></h4>  </td>
+            <td><p:inputText value ="#{controllerUser.dateDeNaiss}" /></td>
+        </tr> 
+        <tr>
+            <td><h4><p:outputLabel value="Email : "/></h4>  </td>
+            <td><p:inputText value="#{controllerUser.mail}"/></td>
+        </tr> 
+        <tr>
+            <td><h4><p:outputLabel value="Rue: "/></h4> </td>
+            <td><p:inputText value ="#{controllerUser.numeroRue}"/></td>
+        </tr> 
+        <tr>
+            <td><h4><p:outputLabel value="Voie: "/></h4> </td>
+            <td><p:inputText value ="#{controllerUser.voie}"/></td>
+        </tr> 
+                <tr>
+            <td><h4><p:outputLabel value="Cp : "/></h4> </td>
+            <td><p:inputText value ="#{controllerUser.cp}"/></td>
+        </tr>
+                <tr>
+            <td><h4><p:outputLabel value="Ville : "/></h4> </td>
+            <td><p:inputText value ="#{controllerUser.ville}"/></td>
+        </tr> 
+        <tr>
+            <td>&nbsp;</td>
+            <td> <p:selectBooleanCheckbox >
+            <p:ajax />
+        </p:selectBooleanCheckbox>
+         <h:outputText value=" Accepter les " /><h:link outcome="reglement" value="Règlements et conditions" /></td>
+        </tr> 
+        <tr> 
+            <td><p:commandButton  value="Valider" id="valider" update="formulaireInscription" actionListener="#{controllerUser.newUser()}"/></td>
+            <td><p:commandButton value="Annuler" id="annuler" update="formulaireInscription" actionListener="#{controlerUser.viderFormulaire()}"/></td>
+        </tr> 
+        
+    </table>
+    
+</h:form>
+        </h:body>
+
+    </f:view>
+</html>
+

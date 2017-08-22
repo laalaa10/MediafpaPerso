@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:p="http://primefaces.org/ui"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+    <h:head>
+        <title>Facelet Title</title>
+    </h:head>
+    <h:body>
+        <link href="resources/css/cssmediathequePerso.css" rel="stylesheet" type="text/css"/>
+        <h3 style="text-align: center;">Bienvenue dans La bibliothèque de Quétigny</h3>
+        
+    <ui:include src="navigationBar.xhtml" />
+    <h:link value="Administrateur" outcome="pageAdmin"/>
+    <h:form id="formInd">
+       
+     <!--   <div id="divConnect" style="border:solid #6fc0ea 3px;text-align: center;" >            
+      
+        <h:outputText value="Connectez vous." style="text-align: center;"/>
+        <h4><p:outputLabel id="identifiant"  title="Identifiant" value="Identifiant : "/><span class="bold"> * </span>
+        <p:inputText id="IdUser" value=""/></h4>
+        <h4><p:outputLabel  id="motdepasse"  title="Mot de passe" value="Mot de Passe : "/><span class="bold">* </span>
+        <p:password id="mdpUser" value="" required="true"/></h4>
+        <p:commandButton value="Connexion" id="ajax" styleClass="ui-priority-primary" title="Connexion" />
+
+        </div>-->
+
+        <div id="divCarou">
+            <p:tab>
+                test : #{rechercheController.typeCategorie.nom}
+            </p:tab>
+            <p:carousel  numVisible="1" effect="easeInStrong" headerText="Fiche" style="margin-bottom:0;height:100px;" itemStyle="height:300px;text-align:center" class="mediumlargeur" autoPlayInterval="7000" responsive="true">
+
+        <p:tab title="Godfather Part I">
+            <h:panelGrid columns="2" id="h_panelGridid" cellpadding="10" styleClass="ui-panelgrid-blank" >
+                <h:outputText
+                    value="The story begins as Don Vito Corleone, the head of a New York Mafia family, oversees his daughter's wedding. 
+                    His beloved son Michael has just come home from the war, but does not intend to become part of his father's business." />
+            </h:panelGrid>
+                
+        </p:tab>
+            
+        <p:tab title="Godfather Part II">
+            
+            <h:panelGrid columns="2" cellpadding="10">
+                <h:outputText value="Francis Ford Coppola's legendary continuation and sequel to his landmark 1972 film, The_Godfather, parallels the young Vito Corleone's rise with his son Michael's spiritual fall, deepening The_Godfather's depiction of the dark side of the American dream. 
+                In the early 1900s, the child Vito flees his Sicilian village for America. " />
+            </h:panelGrid>
+            
+        </p:tab>
+            
+        <p:tab title="Godfather Part III">
+            
+    <h:panelGrid columns="2" cellpadding="10">
+                <h:outputText value="After a break of more than 15 years, director Francis Ford Coppola and writer Mario Puzo returned to the well for this third and final story of the fictional Corleone crime family. 
+                    Two decades have passed, and crime kingpin Michael Corleone, now divorced from his wife Kay has nearly succeeded." />
+    </h:panelGrid>
+            
+        </p:tab>
+            
+    </p:carousel>
+        </div>
+       </h:form> 
+    
+    <h:form>
+    
+        <div id="divSuggest">
+         
+         <h3>Suggestions du moment</h3>
+         
+         <p:tabView dynamic="true" cache="true" value="#{controller.document}" orientation="top" >
+        <p:tab title="Suggest I">
+            <h:panelGrid columns="2" cellpadding="10">
+              <p:graphicImage url="resources/img/document-1.jpg" />
+                <h:outputText
+                    value="The story begins as Don Vito Corleone..." />
+            </h:panelGrid>
+        </p:tab>
+        <p:tab title="Suggest II">
+            <h:panelGrid columns="2" cellpadding="10">
+                  <p:graphicImage url="resources/img/document-2.jpg" />            
+                <h:outputText value="Francis Ford Coppola's legendary..." />
+            </h:panelGrid>
+        </p:tab>
+
+    </p:tabView>
+    <!--<p:ring value="#{controller.document}" var="document" autoplayPauseOnHover="true" easing="easeInOutBack" autoplay="true" autoplayDuration="5000" >
+        <p:outputPanel style="text-align: center;" layout="block">
+            <img src="resources/img/document-#{document.idDocument}.jpg" alt="#{document.titre}"/>
+            <br />
+             <p:commandButton update="formInd" oncomplete="PF('docDialog').show()" icon="ui-icon-search" title="View">
+                 <f:setPropertyActionListener value="#{document}" target="#{rechercheController.docSeleted}" />
+            </p:commandButton>
+        </p:outputPanel>
+    </p:ring>-->
+        </div>
+        
+                <p:dialog header="Infos sur le Document" widgetVar="docDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
+                    
+                    <p:outputPanel id="docDetail1" style="text-align:center;">
+                        
+                    <p:panelGrid  columns="2" rendered="#{not empty rechercheController.docSeleted}" columnClasses="label,value">
+                        
+                    <f:facet name="header">
+                    </f:facet>
+
+                    <h:outputText value="Id:" />
+                    <h:outputText value="#{rechercheController.docSeleted.idDocument}" />
+                    <h:outputText value="Editeur:" />
+                    <h:outputText value="#{rechercheController.docSeleted.idEditeur.nom}" />
+                    <h:outputText value="Année:" />
+                    <h:outputText value="#{rechercheController.docSeleted.annee}" />
+
+                </p:panelGrid>
+                        
+            </p:outputPanel>
+                    
+        </p:dialog>
+        
+        
+        </h:form>
+    </h:body>
+</html>
+
