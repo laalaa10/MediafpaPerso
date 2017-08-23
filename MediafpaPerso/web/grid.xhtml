@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+            xmlns:h="http://xmlns.jcp.org/jsf/html"
+>
+    <h:head>
+        <script type="text/javascript">
+            function actionjava (nomid){
+               if(document.getElementById(nomid).classList.contains('showdiv')) {
+                  
+                   document.getElementById(nomid).classList.remove('showdiv');
+                   document.getElementById(nomid).classList.add('hidediv');
+               }
+               else {
+                 
+                   document.getElementById(nomid).classList.remove('hidediv');
+                   document.getElementById(nomid).classList.add('showdiv');
+               }
+              
+            }
+            </script>
+        <style>
+            
+            .mainDiv {
+                width: 1120px;
+                background-color: #ffff99;
+                margin: 20px auto 40px;                  
+            }
+            .hidediv{
+                display: none;
+            }
+            .showdiv{
+             display: inline-block;
+                
+            }
+            .div_quart{
+               display: inline-block;
+               width: 260px;
+               margin: 10px;
+               background-color: #ff9900;
+               
+            }
+            
+            .div_demi{
+               display: inline-block ;
+               width: 540px;
+               margin: 10px;
+               background-color: #ff6600;
+            }
+            
+            .div_full{
+               display: inline-block;
+               width: 1100px;
+               margin: 10px;
+               background-color: #ff0000;
+            }
+            
+            .compo_quart{
+             display: inline-block;
+             
+            }
+            .compo_demi{
+             width: 560px;
+             background-color: #999;
+            }
+            .compo_ful{
+             display: inline-block;
+             width: 1120px;
+             background-color: #666;
+            }
+            
+            @media (max-width:1160px){
+            .mainDiv{
+                width: 560px;  
+            }  
+            .dispar{
+                display: none;
+            }
+            .div_full{
+               width: 540px;
+            }
+                        .compo_quart{
+             display: inline-block;
+             
+            }
+
+            .compo_ful{
+             width: 560px;
+            }
+            }
+            
+             @media (max-width:600px){
+                 
+            .mainDiv{
+                width: 280px;   
+            }  
+            .dispar{
+                display: inline-block;
+            }
+            .div_demi, .div_full{
+               width: 260px;
+            }
+            
+                        .compo_demi, .compo_ful{
+             width: 280px;
+            }
+            
+            
+            }
+        </style>
+        <title>Grille de Mise en Page</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    </h:head>
+    <h:body>
+        <div class="mainDiv" >Grille de Mise en Page<a href="javascript:void();" onclick="actionjava('ladiv');">action</a><br/><div class="div_quart dispar" >div_quart</div><div class="div_quart">
+                div_quart2</div><div class="div_quart">
+                div_quart3</div><div class="div_quart">div_quart4</div><div class="div_demi">div_demi</div><div class="div_demi">div_demi</div><div class="div_full">
+                    
+                    div_full</div><div class="compo_demi showdiv" id="ladiv">compo demi affectee<br/>
+                    <div class="div_quart">
+                div_quart2</div><div class="div_quart">
+                div_quart2</div><div class="div_demi">
+                    div_quart2</div></div><div class="compo_demi showdiv">
+                    
+                    
+                    compo demi<br/>
+                   
+                <div class="div_demi">
+                    ddem2</div><div class="div_demi">
+                    ddem2</div></div>
+                
+                
+                
+        </div>
+    </h:body>
+</html>
+
+
+
+
+

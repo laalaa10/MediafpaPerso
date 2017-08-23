@@ -76,7 +76,11 @@ and open the template in the editor.
 
             <h:form id="monForm">
                 <div id="listeBout">
+<<<<<<< Updated upstream
                     <p:selectOneMenu id="selectOneMenuCategories" value="#{controller.selectedCategorie}" style="width:210px;margin:0px;" converter="#{converterCategorieDocument}"  >
+=======
+                    <p:selectOneMenu id="selectOneMenuCategories" value="#{controller.selectedCategorie}" style="width:210px;margin:0px;" converter="#{converterCategorieDocument}" >
+>>>>>>> Stashed changes
                         <f:selectItem itemLabel="-- Choisissez une Categorie--" itemValue="#{null}" noSelectionOption="true" />
                         <f:selectItems itemLabel="#{categorieDocument.nom}" var="categorieDocument" value="#{controllerCategorie.renvoyerListeCategories()}" />
                     </p:selectOneMenu>

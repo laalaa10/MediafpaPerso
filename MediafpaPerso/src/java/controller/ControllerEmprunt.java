@@ -80,10 +80,12 @@ public class ControllerEmprunt implements Serializable {
    // Creer un npuvel emprunt  
     
   public void nouvelEmprunt(){
-    //  emprunter.setIdExemplaire(controller.getDoc());
       emprunter.setDateEmprunt(dateEmprunt);
       emprunter.setIdUtilisateur(controllerUser.getUser());
       emprunter.setDateRetour(dateRetour);
-  }
+    //  emprunter.setIdExemplaire();
+
+  }   
+
   
 }

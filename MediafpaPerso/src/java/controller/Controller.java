@@ -48,7 +48,6 @@ public class Controller implements Serializable{
 
 
       public Controller (){
-           
       }
 
         @PostConstruct

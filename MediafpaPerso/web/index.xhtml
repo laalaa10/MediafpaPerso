@@ -14,6 +14,7 @@
         
     <ui:include src="navigationBar.xhtml" />
     <h:link value="Administrateur" outcome="pageAdmin"/>
+    <h:link value="TestGrid" outcome="grid"/>
     <h:form id="formInd">
        
      <!--   <div id="divConnect" style="border:solid #6fc0ea 3px;text-align: center;" >            
@@ -86,7 +87,8 @@
         </p:tab>
 
     </p:tabView>
-    <!--<p:ring value="#{controller.document}" var="document" autoplayPauseOnHover="true" easing="easeInOutBack" autoplay="true" autoplayDuration="5000" >
+         
+    <p:ring value="#{controller.document}" var="document" autoplayPauseOnHover="true" easing="easeInOutBack" autoplay="true" autoplayDuration="5000" >
         <p:outputPanel style="text-align: center;" layout="block">
             <img src="resources/img/document-#{document.idDocument}.jpg" alt="#{document.titre}"/>
             <br />
@@ -94,7 +96,8 @@
                  <f:setPropertyActionListener value="#{document}" target="#{rechercheController.docSeleted}" />
             </p:commandButton>
         </p:outputPanel>
-    </p:ring>-->
+    </p:ring>
+         
         </div>
         
                 <p:dialog header="Infos sur le Document" widgetVar="docDialog" modal="true" showEffect="fade" hideEffect="fade" resizable="false">
