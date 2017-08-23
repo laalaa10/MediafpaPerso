@@ -3,7 +3,9 @@
 body{
   /*  background-color: #fff;*/
 }
-
+.suggestClass{
+    
+}
 #divConnect{
     float: left;
     font-size: 0.9em;
@@ -32,4 +34,8 @@ body{
     width: 550px;
     z-index: 3;
     font-size: 14px;
+}
+#divSuggest img {
+    max-width: 200px;
+    height:200px;
 }

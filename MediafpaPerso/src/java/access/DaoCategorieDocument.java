@@ -5,6 +5,7 @@
  */
 package access;
 
+import java.util.List;
 import javax.ejb.Stateless;
 import model.CategorieDocument;
 
@@ -14,5 +15,13 @@ public class DaoCategorieDocument extends Dao<CategorieDocument, Integer> {
 	public DaoCategorieDocument() {
 		
 	}
+	        public List<CategorieDocument> rechercherParCat (){
+           return em.createNativeQuery("select * from categorie_document",CategorieDocument.class).getResultList();
+   
+        }
+        	public CategorieDocument findByKey2(int id) {
+                return (CategorieDocument) em.createNativeQuery("select * from type_categorie where id_categorie_document='"+id+"'",CategorieDocument.class).getSingleResult();                
+	}
+
 	
 }

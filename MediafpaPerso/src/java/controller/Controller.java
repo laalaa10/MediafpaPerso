@@ -76,15 +76,9 @@ public class Controller implements Serializable{
 		} else {
 			DocAAfficher = document;
 		}
-                System.out.println("articlesAAfficherarticlesAAfficherarticlesAAfficher"+DocAAfficher);
+                System.out.println("les Documents A Afficher "+DocAAfficher);
 	}
 
-    
-    public List<Document> renvoyerListeArticles(){
-
-        return daoDocument.findAll();
-        
-    }
 
     public int getSelectionOneMenu() {
         return selectionOneMenu;

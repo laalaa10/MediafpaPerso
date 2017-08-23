@@ -76,11 +76,11 @@ and open the template in the editor.
 
             <h:form id="monForm">
                 <div id="listeBout">
-                    <p:selectOneMenu id="selectOneMenuCategories" value="#{controler.selectedCategorie}" style="width:210px;margin:0px;" converter="#{converterCategorie}" >
+                    <p:selectOneMenu id="selectOneMenuCategories" value="#{controller.selectedCategorie}" style="width:210px;margin:0px;" converter="#{ConverterCategorieDocument}" >
                         <f:selectItem itemLabel="-- Choisissez une Categorie--" itemValue="#{null}" noSelectionOption="true" />
-                        <f:selectItems itemLabel="#{categorie.intitule}" var="categorie" value="#{controlerCategorie.renvoyerListeCategories()}" />
+                        <f:selectItems itemLabel="#{categorieDocument.nom}" var="categorieDocument" value="#{controllerCategorie.renvoyerListeCategories()}" />
                     </p:selectOneMenu>
-                    <p:commandButton value="Voir les Documents" id="ajax" update=":panel, monForm, :formTable" actionListener="#{controler.selectCategorie()}"/>
+                    <p:commandButton value="Voir les Documents" id="ajax" update=":panel, monForm, :formTable" actionListener="#{controller.selectCategorie()}"/>
                 </div>
             </h:form>
 
@@ -99,6 +99,7 @@ and open the template in the editor.
            <p:cellEditor>
                <f:facet name="output"><h:outputText value="#{document.idCategorieDocument.nom}" /></f:facet>
                <f:facet name="input"><p:inputText id="modelInput" value="#{document.idCategorieDocument.nom}" style="width:100%"/></f:facet>
+               
            </p:cellEditor>
                                 
                             </p:column>

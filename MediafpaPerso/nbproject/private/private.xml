@@ -3,20 +3,21 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/web/formulaire.xhtml</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/web/navigationBar.xhtml</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/src/java/controller/RechercheController.java</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/web/pageAdmin.xhtml</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/web/catalogue.xhtml</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/src/java/controller/ControllerUser.java</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/src/java/access/DaoAdresse.java</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/web/index.xhtml</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/src/java/controller/ConverterDocument.java</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/src/java/controller/Controller.java</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/src/java/access/Dao.java</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/web/resources/css/cssmediathequebis.css</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/src/java/controller/ControllerEmprunt.java</file>
-            <file>file:/C:/Users/Ouzin%20Kane/Documents/NetBeansProjects/MediafpaPerso/src/java/access/DaoCategorieDocument.java</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/src/java/controller/ConverterTypeCategorie.java</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/src/java/controller/ControllerCategorie.java</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/src/java/controller/RechercheController.java</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/web/navigationBar.xhtml</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/web/index.xhtml</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/src/java/access/DaoCategorieDocument.java</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/src/java/access/Dao.java</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/web/resources/css/cssmediathequePerso.css</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/src/java/controller/ConverterDocument.java</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/src/java/controller/ConverterCategorieDocument.java</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/src/java/controller/Controller.java</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/src/java/access/DaoTypeCategorie.java</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/web/pageAdmin.xhtml</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/src/java/model/CategorieDocument.java</file>
+            <file>file:/C:/Users/Ouzin%20Kane/Documents/MediafpaPerso/MediafpaPerso/src/java/model/TypeCategorie.java</file>
         </group>
     </open-files>
 </project-private>

@@ -53,7 +53,7 @@
             
             <h:outputLabel for="txtAchercher" value="Catalogue : " />
             <p:inputText id="txtAchercher" value="#{rechercheController.nomAchercher}"/>
-            <p:commandButton class="c1" id="boutDeRecherche" value="Search" icon="ui-icon-search" update="form"  actionListener="#{rechercheController.rechercheDansCatalogue(rechercheController.nomAchercher)}" action="catalogue"/>
+            <p:commandButton class="c1" id="boutDeRecherche" value="Search" icon="ui-icon-search" update="form" action="catalogue" actionListener="#{rechercheController.rechercheDansCatalogue(rechercheController.nomAchercher)}" />
 
         </h:panelGrid>
             </p:panel>
