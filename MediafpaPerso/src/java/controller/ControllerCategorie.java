@@ -62,7 +62,7 @@ public class ControllerCategorie implements Serializable {
     }
     
     public List<CategorieDocument> renvoyerListeCategories(){
-        return daoCategorieDocument.rechercherParCat();   
+        return daoCategorieDocument.renvoyerToutesCategories();   
     }
 
     public CategorieDocument getCat() {

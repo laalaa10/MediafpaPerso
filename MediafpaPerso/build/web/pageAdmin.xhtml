@@ -76,7 +76,7 @@ and open the template in the editor.
 
             <h:form id="monForm">
                 <div id="listeBout">
-                    <p:selectOneMenu id="selectOneMenuCategories" value="#{controller.selectedCategorie}" style="width:210px;margin:0px;" converter="#{ConverterCategorieDocument}" >
+                    <p:selectOneMenu id="selectOneMenuCategories" value="#{controller.selectedCategorie}" style="width:210px;margin:0px;" converter="#{converterCategorieDocument}"  >
                         <f:selectItem itemLabel="-- Choisissez une Categorie--" itemValue="#{null}" noSelectionOption="true" />
                         <f:selectItems itemLabel="#{categorieDocument.nom}" var="categorieDocument" value="#{controllerCategorie.renvoyerListeCategories()}" />
                     </p:selectOneMenu>
@@ -92,7 +92,7 @@ and open the template in the editor.
                 <h:form id="formTable">
                     <p:growl id="msgs" showDetail="true"/>
                     
-                    <p:dataTable id="table" var="document" value="#{controller.document}" emptyMessage="Cette Catégorie n'a plus d'articles en stock" selection="#{controller.doc}" rowKey="#{document.idDocument}" editable="true"  >
+                    <p:dataTable id="table" var="document" value="#{controller.docAAfficher}" emptyMessage="Cette Catégorie n'a plus d'articles en stock" selection="#{controller.doc}" rowKey="#{document.idDocument}" editable="true"  >
                         <p:ajax  event="rowSelect"  update=":formTable" />
 
                             <p:column headerText="Categorie">

@@ -15,12 +15,12 @@ public class DaoCategorieDocument extends Dao<CategorieDocument, Integer> {
 	public DaoCategorieDocument() {
 		
 	}
-	        public List<CategorieDocument> rechercherParCat (){
+	        public List<CategorieDocument> renvoyerToutesCategories (){
            return em.createNativeQuery("select * from categorie_document",CategorieDocument.class).getResultList();
    
         }
         	public CategorieDocument findByKey2(int id) {
-                return (CategorieDocument) em.createNativeQuery("select * from type_categorie where id_categorie_document='"+id+"'",CategorieDocument.class).getSingleResult();                
+                return (CategorieDocument) em.createNativeQuery("select * from categorie_document where id_categorie_document='"+id+"'",CategorieDocument.class).getSingleResult();                
 	}
 
 	

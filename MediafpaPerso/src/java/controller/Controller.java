@@ -66,8 +66,9 @@ public class Controller implements Serializable{
     
 
     public void selectCategorie() {
-        System.out.println("La categorie Selectionnée est "+ this.selectedCategorie);
-		document = daoDocument.findAll();
+        System.out.println("tuttutt");
+        System.out.println("La categorie Selectionnée est "+ this.selectedCategorie.getNom());
+//		document = daoDocument.findAll();
 		
 		CategorieDocument categorieDoc = selectedCategorie;
 		
@@ -78,7 +79,14 @@ public class Controller implements Serializable{
 		}
                 System.out.println("les Documents A Afficher "+DocAAfficher);
 	}
-
+    
+    
+    
+    
+    
+public void test (){
+    System.out.println("gnein gnein gnien");
+}
 
     public int getSelectionOneMenu() {
         return selectionOneMenu;
